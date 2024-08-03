@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.6.3'  // The name you provided during Maven configuration
+        maven 'maven'  // The name you provided during Maven configuration
     }
     stages {
         stage('Checkout') {
