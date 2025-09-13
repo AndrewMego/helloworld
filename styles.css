@@ -1,0 +1,236 @@
+/* Adventure Agency Hero Section Styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Navigation Styles */
+.hero-nav {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.hero-nav .navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hero-nav .nav-link {
+    color: white !important;
+    font-weight: 400;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.hero-nav .nav-link:hover {
+    color: #4ade80 !important;
+    transform: translateY(-2px);
+}
+
+.hero-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #4ade80;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.hero-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Hero Background */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.1) 0%,
+        rgba(34, 197, 94, 0.1) 100%
+    ), 
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2367c3f3;stop-opacity:1" /><stop offset="100%" style="stop-color:%23ffffff;stop-opacity:1" /></linearGradient><linearGradient id="mountains" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23374151;stop-opacity:1" /><stop offset="50%" style="stop-color:%2316a34a;stop-opacity:1" /><stop offset="100%" style="stop-color:%234ade80;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23sky)"/><path d="M0,600 Q200,400 400,500 T800,450 T1200,550 L1200,800 L0,800 Z" fill="url(%23mountains)"/><path d="M0,650 Q150,500 350,580 T750,520 T1200,600 L1200,800 L0,800 Z" fill="%23374151" opacity="0.8"/><circle cx="200" cy="150" r="60" fill="white" opacity="0.8"/><circle cx="400" cy="100" r="40" fill="white" opacity="0.6"/><circle cx="800" cy="120" r="50" fill="white" opacity="0.7"/></svg>') center/cover;
+    
+    /* Fallback for actual mountain image - replace with your image URL */
+    /* background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%), url('your-mountain-image.jpg') center/cover; */
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Account for fixed navbar */
+}
+
+.hero-text-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    max-width: 500px;
+    margin-left: 0;
+    animation: slideInLeft 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f2937;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #16a34a;
+    line-height: 1.1;
+    margin-bottom: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .hero-text-box {
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        max-width: 400px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-nav .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        min-height: 500px;
+    }
+    
+    .hero-text-box {
+        padding: 1.5rem 1rem;
+        margin: 1rem;
+        border-radius: 15px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-nav .nav-link {
+        padding: 0.3rem 0.8rem !important;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text-box {
+        padding: 1rem;
+    }
+    
+    .hero-nav .navbar-brand {
+        font-size: 1.1rem;
+    }
+}
+
+/* Additional Utility Classes */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation for background */
+.hero-bg-image {
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
